@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { useRouter } from "next/router";
-import { Button, Layout, Image, Menu } from 'antd';
+import { Button, Dropdown, Layout, Image, Menu } from 'antd';
 import {  } from '@ant-design/icons';
 
 const { Header, Footer, Sider, Content } = Layout;
+
 const { SubMenu } = Menu;
 
 const AccountSettingsLayout = ({ children, props }) => {
@@ -27,54 +28,46 @@ const AccountSettingsLayout = ({ children, props }) => {
           src = "/logo.png"
           preview = {false}
           style ={{
+            width: 150,
             marginRight: 30,
             float: "left",
-          }}
-        />
-
+          }}/>
         <Menu
-            theme="dark"
-            mode="horizontal"
-            defaultSelectedKeys={[count]}
-            style ={{
-                marginLeft: 160
-            }}
-        >
-
-          <Menu.Item key="/Antispoofing" onClick={handelClick}>
-          Антсиспуфинг
+          theme="dark"
+          mode="horizontal"
+          defaultSelectedKeys={[count]}
+          onClick={handelClick}>
+          <Menu.Item key="/tasks" >
+            Tasks
           </Menu.Item>
-          <Menu.Item key="/Recog" onClick={handelClick}>
-          Распознование лиц
+          <Menu.Item key="/static" >
+            Статистика
           </Menu.Item>
-          <Menu.Item key="/Turn" onClick={handelClick}>
-          Поворот лица
+          <Menu.Item key="/task_manager" >
+            Диспетчер задач
           </Menu.Item>
-          <Menu.Item key="/static" onClick={handelClick}>
-          Статистика
-          </Menu.Item>
-          <Menu.Item key="/task_manager" onClick={handelClick}>
-          Диспетчер задач
-          </Menu.Item>
-
-          <SubMenu
-              key="sub4"
-              title="Hi, user"
-              mode="horizontal"
-              style ={{
-                float: "right",
-                marginRight: 28,
-              }}
-          >
-            <Menu.Item key="logout">log out</Menu.Item>
-          </SubMenu>
         </Menu>
-
-      </Header>
-      <Content >{children}</Content>
-
+        <Menu
+          theme="dark"
+          defaultSelectedKeys={[count]}
+          onClick={handelClick}
+          style ={{
+            marginLeft: "70vh",
+            float: "right",
+            marginRight: 28,
+          }}>
+            <SubMenu
+              key="sub4"
+              title="Hi, user">
+                <Menu.Item key="tasks">log out</Menu.Item>
+            </SubMenu>
+          </Menu>
+        </Header>
+      <Content>
+        {children}
+      </Content>
       <Footer style={{ textAlign: "center" }}>
-        Ant Design ©2020 Created by Ant UED
+          Ant Design ©2020 Created by Ant UED
       </Footer>
     </Layout>
 
