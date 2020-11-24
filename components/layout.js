@@ -46,22 +46,16 @@ const AccountSettingsLayout = ({ children, props }) => {
           <Menu.Item key="/task_manager" >
             Диспетчер задач
           </Menu.Item>
+          <SubMenu
+            key="sub4"
+            title="Hi, user"
+            style ={{
+              float: "right",
+              marginRight: 28,
+            }}>
+              <Menu.Item key="tasks">log out</Menu.Item>
+          </SubMenu>
         </Menu>
-        <Menu
-          theme="dark"
-          defaultSelectedKeys={[count]}
-          onClick={handelClick}
-          style ={{
-            marginLeft: "70vh",
-            float: "right",
-            marginRight: 28,
-          }}>
-            <SubMenu
-              key="sub4"
-              title="Hi, user">
-                <Menu.Item key="tasks">log out</Menu.Item>
-            </SubMenu>
-          </Menu>
         </Header>
       <Content>
         {children}
