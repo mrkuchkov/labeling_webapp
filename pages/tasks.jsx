@@ -7,24 +7,23 @@ import { useRouter } from "next/router";
 const dataSource = [
   {
     key: 'Antispoofing',
-    name: 'Antispoofing',
+    name: 'Антиспуфинг',
     age: 0,
     address: 100,
   },
   {
     key: 'Recog',
-    name: 'Recog',
+    name: 'Распознование',
     age: 10,
     address: 50,
   },
   {
     key: 'Turn',
-    name: 'Turn',
+    name: 'Поворот лица',
     age: 0,
     address: 0,
   },
 ];
-
 
 
 const columns = [
@@ -32,7 +31,6 @@ const columns = [
     title: 'Название',
     dataIndex: 'name',
     key: 'name',
-    render: (text) => <a href={text}>{text}</a>,
   },
   {
     title: 'Выполнено',
@@ -49,7 +47,21 @@ const columns = [
 
 const Index = () => (
   <AccountSettingsLayout props ={"/tasks"}>
-    <Table dataSource={dataSource} columns={columns} />;
+    <Table
+    dataSource={dataSource}
+    columns={columns}
+    onRow={(record, rowIndex) => {
+        const [count, setCount] = useState();
+        const router = useRouter();
+        return {
+          onClick: event => {
+            const key = record.key;
+            setCount(key);
+            router.push(key);
+            }
+          };
+        }}
+  />;
   </AccountSettingsLayout>
 )
 
