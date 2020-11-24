@@ -50,14 +50,11 @@ const Index = () => (
     <Table
     dataSource={dataSource}
     columns={columns}
-    onRow={(record, rowIndex) => {
-        const [count, setCount] = useState();
+    onRow={(record) => {
         const router = useRouter();
         return {
           onClick: event => {
-            const key = record.key;
-            setCount(key);
-            router.push(key);
+            router.push(record.key);
             }
           };
         }}
