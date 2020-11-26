@@ -7,7 +7,7 @@ const { Header, Footer, Sider, Content } = Layout;
 
 const { SubMenu } = Menu;
 
-const AccountSettingsLayout = ({ children, props }) => {
+const MenuLayout = ({ children, props }) => {
 
   const [count, setCount] = useState(props);
   const router = useRouter();
@@ -37,23 +37,23 @@ const AccountSettingsLayout = ({ children, props }) => {
           mode="horizontal"
           defaultSelectedKeys={[count]}
           onClick={handelClick}>
-          <Menu.Item key="/tasks" >
+          <Menu.Item key="/" >
             Tasks
           </Menu.Item>
-          <Menu.Item key="/static" >
+          <Menu.Item key="/stats" >
             Статистика
           </Menu.Item>
           <Menu.Item key="/task_manager" >
             Диспетчер задач
           </Menu.Item>
           <SubMenu
-            key="sub4"
+            key="sub"
             title="Hi, user"
             style ={{
               float: "right",
               marginRight: 28,
             }}>
-              <Menu.Item key="tasks">log out</Menu.Item>
+              <Menu.Item key="/">log out</Menu.Item>
           </SubMenu>
         </Menu>
         </Header>
@@ -68,4 +68,4 @@ const AccountSettingsLayout = ({ children, props }) => {
   );
 };
 
-export default AccountSettingsLayout;
+export default MenuLayout;

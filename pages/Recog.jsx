@@ -1,11 +1,11 @@
-import AccountSettingsLayout from '../components/layout'
+import MenuLayout from '../components/layout'
 import { Row, Col, Image, Button, Typography } from 'antd';
 import { LeftOutlined, RightOutlined, RedoOutlined } from '@ant-design/icons';
 
 const { Title } = Typography;
 
 const Index = () => (
-  <AccountSettingsLayout props ={"/Recog"}>
+  <MenuLayout props ={"/recog"}>
   <>
         <Row justify="center" align="bottom" >
           <Col span={4} style={{ padding:"20px"}}>
@@ -91,7 +91,7 @@ const Index = () => (
           </Col>
         </Row>
   </>
-  </AccountSettingsLayout>
+  </MenuLayout>
 )
 
 export default Index

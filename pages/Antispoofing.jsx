@@ -1,10 +1,51 @@
-import AccountSettingsLayout from '../components/layout'
+import MenuLayout from '../components/layout'
 import { Row, Col, Image, Button, Typography } from 'antd';
 
 const { Title } = Typography;
 
+const test_template ={
+  result_classes: [
+      {
+        id: 1,
+        name: 'Реальный человек',
+        descripiton: 'Это лицо настоящего человека',
+        //key_code: 90,
+      },
+      {
+        id: 2,
+        name: 'Телефон',
+        descripiton: 'Это лицо настоящего человека',
+      },
+  ],
+  problem_classes: [
+      {
+        id: 1,
+        name: 'Лицо завечено',
+        descripiton: 'Это лицо засвечено',
+      },
+      {
+        id: 2,
+        name: 'Телефон',
+        descripiton: 'Это лицо настоящего человека',
+      },
+  ]
+};
+
+// построить кнопку на основе объекта test_template
+
+
+const send_result = (result_id) => {
+  console.log(result_id);
+};
+
+const send_problem = (problem_id) => {
+  console.log(problem_id);
+};
+
+
+
 const Index = () => (
-  <AccountSettingsLayout props ={"/Antispoofing"}>
+  <MenuLayout props ={"/antispoofing"}>
     <>
       <Row>
         <Col span={8} style={{padding:"30px", height:"300px"}}>
@@ -65,7 +106,7 @@ const Index = () => (
       </Row>
     </>
 
-  </AccountSettingsLayout>
+  </MenuLayout>
 )
 
 export default Index

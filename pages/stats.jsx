@@ -1,9 +1,9 @@
 import MenuLayout from '../components/layout'
 
 const Index = () => (
-  <MenuLayout props ={"/turn"}>
+  <MenuLayout props ={"/stats"}>
     <div>
-      This is page About2
+      This is page static
     </div>
   </MenuLayout>
 )
